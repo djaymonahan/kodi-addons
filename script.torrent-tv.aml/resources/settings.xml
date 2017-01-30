@@ -1,0 +1,12 @@
+<settings>
+	<category label="Основные">
+		<setting default="" id="login" label="Логин" type="text" />
+		<setting default="" id="password" label="Пароль" option="hidden" type="text" />
+		<setting default="0" id="gender" label="Пол" type="enum" values="Мужской|Женский" />
+		<setting default="4" id="age" label="Возраст" type="enum" values="Младше 13|13-17|18-24|25-34|35-44|45-54|55-64|Старше 64" />
+        <setting default="st.anger" id="skin" label="Обложка" type="labelenum" values="arctic.zephyr|st.anger" />
+        <setting default="false" id="winmode" label="Оконный режим плеера" type="bool" />
+        <setting default="8621" id="outport" label="Внеший порт AceStream" type="number" />
+        <setting default="" id="uuid" type="text" visible="false" />
+	</category>
+</settings>
