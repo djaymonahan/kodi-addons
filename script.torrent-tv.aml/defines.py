@@ -7,12 +7,12 @@ import threading
 import os
 from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 
-ADDON = xbmcaddon.Addon( id = 'script.torrent-tv.aml' )
+ADDON = xbmcaddon.Addon(id = 'script.torrent-tv.aml')
 ADDON_ICON	 = ADDON.getAddonInfo('icon')
 ADDON_PATH = ADDON.getAddonInfo('path')
 ADDON_ICON	 = ADDON.getAddonInfo('icon')
-DATA_PATH = xbmc.translatePath( os.path.join( "special://profile/addon_data", 'script.torrent-tv.aml') )
-VERSION = '1.5.3'
+DATA_PATH = xbmc.translatePath(os.path.join( "special://profile/addon_data", 'script.torrent-tv.aml'))
+VERSION = '1.5.7'
 skin = ADDON.getSetting('skin')
 SKIN_PATH = ADDON_PATH
 print skin
@@ -34,13 +34,13 @@ def showMessage(message = '', heading='Torrent-TV.AML', times = 6789):
     except Exception, e:
         try: xbmc.executebuiltin('XBMC.Notification("%s", "%s", %s, %s)' % (heading, message, times, ADDON_ICON))
         except Exception, e:
-            xbmc.log( 'showMessage: exec failed [%s]' % 3 )
+            xbmc.log('showMessage: exec failed [%s]' % 3)
 
 def GET(target, post=None, cookie = None, tryies = 0):
     try:
         print target
         req = urllib2.Request(url = target, data = post)
-        req.add_header('User-Agent', 'XBMC (script.torrent-tv.ru)')
+        req.add_header('User-Agent', 'Mozilla/5.0')
         if cookie:
             req.add_header('Cookie', 'PHPSESSID=%s' % cookie)
         resp = urllib2.urlopen(req, timeout=10)

@@ -1,8 +1,4 @@
-﻿# Copyright (c) 2013 Torrent-TV.RU
-# Writer (c) 2013, Welicobratov K.A., E-mail: 07pov23@gmail.com
-
-#imports
-import xbmcgui
+﻿import xbmcgui
 import xbmc
 import xbmcaddon
 
@@ -198,14 +194,6 @@ class WMainForm(xbmcgui.WindowXML):
 
     def onInit(self):
         try:
-            data = defines.GET('http://1ttvxbmc.top/v3/version.php?application=xbmc&version=%s' % defines.VERSION)
-            jdata = json.loads(data)
-            if jdata['support'] == 0:
-               from okdialog import OkDialog
-               dialog = OkDialog("okdialog.xml", defines.SKIN_PATH, defines.ADDON.getSetting('skin'))
-               dialog.setText("Текущая версия приложения (%s) не поддерживается. Последняя версия %s " % (defines.VERSION, jdata['last_version'].encode('utf-8')))
-               dialog.doModal()
-               self.close()
             self.img_progress = self.getControl(108)
             self.txt_progress = self.getControl(107)
             self.progress = self.getControl(WMainForm.PROGRESS_BAR)
