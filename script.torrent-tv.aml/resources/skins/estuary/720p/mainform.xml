@@ -313,6 +313,18 @@
           <textcolor>FFFFFFFF</textcolor>
           <shadowcolor>FF000000</shadowcolor>
         </control>
+        <control type="progress" id ="110">
+          <description>Progress EGP</description>
+          <posx>215</posx>
+          <posy>565</posy>
+          <width>900</width>
+          <height>10</height>
+          <visible>true</visible>
+          <colordiffuse>88FFFFFF</colordiffuse>
+          <width>900</width>
+          <height>7</height>
+          <info>ListItem.Progress</info>
+        </control>
         <control type="label" id ="301">
           <description>Next EPG1</description>
           <posx>215</posx>
@@ -389,17 +401,6 @@
           <scroll>true</scroll>
           <height>200</height>
           <font>font10</font>
-        </control>
-
-        <control type="progress" id ="110">
-          <description>Progress EGP</description>
-          <posx>215</posx>
-          <posy>565</posy>
-          <visible>true</visible>
-          <colordiffuse>88FFFFFF</colordiffuse>
-          <width>900</width>
-          <height>7</height>
-          <info>ListItem.Progress</info>
         </control>
         <control type="label" id="107">
           <description>My First label</description>
