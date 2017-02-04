@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.torrent-tv.aml"
        name="Torrent-TV Amlogic"
-       version="1.5.7"
+       version="1.5.8"
        provider-name="Alex@ELEC">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
@@ -12,8 +12,20 @@
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
+        <news>
+v1.5.8: update skins
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
         <summary>Torrent-TV XBMC</summary>
         <description>Торрент ТВ теперь можно смотреть на медиаплатформе KODI.</description>
         <platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.alexelec.in.ua</forum>
+		<website>http://www.alexelec.in.ua</website>
+		<email>ytplugin at datanet dot ws</email>
+		<source>https://github.com/AlexELEC/kodi-addons</source>
     </extension>
 </addon>

@@ -8,9 +8,7 @@ import mainform
 
 if __name__ == '__main__':
     if not defines.ADDON.getSetting('skin'):
-       defines.ADDON.setSetting('skin', 'st.anger')
-    if defines.ADDON.getSetting("skin") == "default":
-       defines.ADDON.setSetting("skin", "st.anger")
+       defines.ADDON.setSetting('skin', 'estuary')
     if not defines.ADDON.getSetting("login"):
        defines.ADDON.setSetting("login", "anonymous")
        defines.ADDON.setSetting("password", "anonymous")

@@ -1,3 +1,6 @@
+2017-02-04 v1.5.8
+  update skins
+
 2017-01-30 v1.5.6
   update for Kodi-17
 

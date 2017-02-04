@@ -29,12 +29,11 @@
         </control>
         <control type="label">
           <description>Time</description>
-          <posx>1210</posx>
-          <posy>590</posy>
+          <posx>1200</posx>
+          <posy>610</posy>
+          <font>font13</font>
           <visible>true</visible>
           <label>$INFO[System.Time]</label>
-          <textcolor>White</textcolor>
-          <shadowcolor>ff000000</shadowcolor>
         </control>
         <control type="group">
           
@@ -134,25 +133,25 @@
             <width>100</width>
             <height>100</height>
             <visible>true</visible>
-            <texture>logochannel.png</texture>
+            <texture>unkchannel.jpg</texture>
             <aspectratio>keep</aspectratio>
           </control>
           <control type="group">
             <control type="label" id = "109">
               <description>Current EPG</description>
               <posx>135</posx>
-              <posy>20</posy>
+              <posy>30</posy>
               <width>1000</width>
               <label>Нет программы</label>
-              <font>EPGTimeline</font>
+              <font>font13</font>
               <scroll>true</scroll>
-              <textcolor>White100</textcolor>
+              <textcolor>FFFFFFFF</textcolor>
               <shadowcolor>FF000000</shadowcolor>
             </control>
             <control type="progress" id ="110">
               <description>Progress EGP</description>
-              <posx>135</posx>
-              <posy>70</posy>
+              <posx>130</posx>
+              <posy>60</posy>
               <visible>true</visible>
               <colordiffuse>88FFFFFF</colordiffuse>
               <width>1100</width>
