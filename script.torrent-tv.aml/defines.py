@@ -12,7 +12,7 @@ ADDON_ICON	 = ADDON.getAddonInfo('icon')
 ADDON_PATH = ADDON.getAddonInfo('path')
 ADDON_ICON	 = ADDON.getAddonInfo('icon')
 DATA_PATH = xbmc.translatePath(os.path.join( "special://profile/addon_data", 'script.torrent-tv.aml'))
-VERSION = '1.5.7'
+VERSION = '1.6.0'
 skin = ADDON.getSetting('skin')
 SKIN_PATH = ADDON_PATH
 print skin

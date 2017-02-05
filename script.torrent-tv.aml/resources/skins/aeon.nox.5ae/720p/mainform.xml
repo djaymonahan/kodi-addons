@@ -150,8 +150,16 @@
                 <visible>true</visible>
                 <texture>dialog-bg.png</texture>
               </control>
+              <control type="image">
+                <posx>1</posx>
+                <posy>1</posy>
+                <width>31</width>
+                <height>31</height>
+                <info>ListItem.Icon</info>
+                <aspectratio>keep</aspectratio>
+              </control>
               <control type="label">
-                <posx>5</posx>
+                <posx>45</posx>
                 <posy>4</posy>
                 <width>200</width>
                 <height>22</height>
@@ -160,14 +168,6 @@
                 <selectedcolor>green</selectedcolor>
                 <align>left</align>
                 <info>ListItem.Label</info>
-              </control>
-              <control type="image">
-                <posx>209</posx>
-                <posy>1</posy>
-                <width>31</width>
-                <height>31</height>
-                <info>ListItem.Icon</info>
-                <aspectratio>keep</aspectratio>
               </control>
             </itemlayout>
             <focusedlayout height="30" width="248">
@@ -179,8 +179,16 @@
                 <visible>true</visible>
                 <texture>dialog-bg-solid.png</texture>
               </control>
+              <control type="image">
+                <posx>1</posx>
+                <posy>1</posy>
+                <width>31</width>
+                <height>31</height>
+                <info>ListItem.Icon</info>
+                <aspectratio>keep</aspectratio>
+              </control>
               <control type="label">
-                <posx>5</posx>
+                <posx>45</posx>
                 <posy>4</posy>
                 <width>200</width>
                 <height>22</height>
@@ -191,14 +199,6 @@
                 <selectedcolor>green</selectedcolor>
                 <align>left</align>
                 <info>ListItem.Label</info>
-              </control>
-              <control type="image">
-                <posx>209</posx>
-                <posy>1</posy>
-                <width>31</width>
-                <height>31</height>
-                <info>ListItem.Icon</info>
-                <aspectratio>keep</aspectratio>
               </control>
             </focusedlayout>
           </control>
