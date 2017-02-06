@@ -82,7 +82,7 @@
               <description>User login</description>
               <posx>500</posx>
               <posy>340</posy>
-              <width>100</width>
+              <width>200</width>
               <height>50</height>
               <font>font10</font>
               <visible>true</visible>
@@ -101,7 +101,7 @@
               <description>User Balance</description>
               <posx>500</posx>
               <posy>360</posy>
-              <width>100</width>
+              <width>200</width>
               <height>50</height>
               <font>font10</font>
               <visible>true</visible>
@@ -129,7 +129,7 @@
               <description>Status AceStream</description>
               <posx>500</posx>
               <posy>400</posy>
-              <width>100</width>
+              <width>200</width>
               <height>50</height>
               <font>font10</font>
               <visible>true</visible>
@@ -148,7 +148,7 @@
               <description>IP ADDR</description>
               <posx>500</posx>
               <posy>420</posy>
-              <width>100</width>
+              <width>200</width>
               <height>50</height>
               <font>font10</font>
               <visible>true</visible>
@@ -167,7 +167,7 @@
               <description>Status AceStream Port</description>
               <posx>500</posx>
               <posy>440</posy>
-              <width>100</width>
+              <width>200</width>
               <height>50</height>
               <font>font10</font>
               <visible>true</visible>

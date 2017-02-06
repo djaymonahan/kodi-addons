@@ -320,9 +320,6 @@
           <width>900</width>
           <height>10</height>
           <visible>true</visible>
-          <colordiffuse>88FFFFFF</colordiffuse>
-          <width>900</width>
-          <height>7</height>
           <info>ListItem.Progress</info>
         </control>
         <control type="label" id ="301">

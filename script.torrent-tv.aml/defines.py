@@ -11,8 +11,7 @@ ADDON = xbmcaddon.Addon(id = 'script.torrent-tv.aml')
 ADDON_ICON	 = ADDON.getAddonInfo('icon')
 ADDON_PATH = ADDON.getAddonInfo('path')
 ADDON_ICON	 = ADDON.getAddonInfo('icon')
-DATA_PATH = xbmc.translatePath(os.path.join( "special://profile/addon_data", 'script.torrent-tv.aml'))
-VERSION = '1.6.0'
+DATA_PATH = xbmc.translatePath(os.path.join("special://profile/addon_data", 'script.torrent-tv.aml'))
 skin = ADDON.getSetting('skin')
 SKIN_PATH = ADDON_PATH
 print skin
@@ -54,7 +53,7 @@ def GET(target, post=None, cookie = None, tryies = 0):
         xbmc.log( 'GET EXCEPT [%s]' % (e), 4 )
 
 def checkPort(params):
-        data = GET("http://2ip.ru/check-port/?port=%s" % params)
+        data = GET("https://2ip.ru/check-port/?port=%s" % params)
         beautifulSoup = BeautifulSoup(data)
         port = beautifulSoup.find('div', attrs={'class': 'ip-entry'}).text
         if port.encode('utf-8').find("Порт закрыт") > -1:

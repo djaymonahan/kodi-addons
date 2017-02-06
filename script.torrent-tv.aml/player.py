@@ -1,7 +1,4 @@
-﻿# Copyright (c) 2014 Torrent-TV.RU
-# Writer (c) 2014, Welicobratov K.A., E-mail: 07pov23@gmail.com
-
-import xbmcgui
+﻿import xbmcgui
 import threading
 import xbmcaddon    
 import xbmc
@@ -9,19 +6,20 @@ import time
 import json
 
 import defines
-
 from ts import TSengine as tsengine
+
 #defines
-CANCEL_DIALOG  = ( 9, 10, 11, 92, 216, 247, 257, 275, 61467, 61448, )
+CANCEL_DIALOG = ( 9, 10, 11, 92, 216, 247, 257, 275, 61467, 61448, )
 
 def LogToXBMC(text, type = 1):
     ttext = ''
     if type == 2:
         ttext = 'ERROR:'
-    print '[MyPlayer %s] %s %s\r' % (time.strftime('%X'),ttext, text)
+    print '[TTVPlayer %s] %s %s\r' % (time.strftime('%X'),ttext, text)
 
 class MyPlayer(xbmcgui.WindowXML):
     CONTROL_EPG_ID = 109
+    CONTROL_EPG_ID_NEXT = 112
     CONTROL_PROGRESS_ID = 110
     CONTROL_ICON_ID = 202
     CONTROL_WINDOW_ID = 203
@@ -57,7 +55,7 @@ class MyPlayer(xbmcgui.WindowXML):
             return
         epg_id = self.li.getProperty('epg_cdn_id')
         controlEpg = self.getControl(MyPlayer.CONTROL_EPG_ID)
-        controlEpg1 = self.getControl(112)
+        controlEpg1 = self.getControl(MyPlayer.CONTROL_EPG_ID_NEXT)
         progress = self.getControl(MyPlayer.CONTROL_PROGRESS_ID)
         if epg_id and self.parent.epg.has_key(epg_id) and self.parent.epg[epg_id].__len__() > 0:
             ctime = time.time()
@@ -68,8 +66,12 @@ class MyPlayer(xbmcgui.WindowXML):
             set = time.localtime(et)
             progress.setPercent((ctime - bt)*100/(et - bt))
             controlEpg.setLabel('%.2d:%.2d - %.2d:%.2d %s' % (sbt.tm_hour, sbt.tm_min, set.tm_hour, set.tm_min, curepg[0]['name']))
+            sbt = time.localtime(float(curepg[1]['btime']))
+            set = time.localtime(float(curepg[1]['etime']))
+            controlEpg1.setLabel('%.2d:%.2d - %.2d:%.2d %s' % (sbt.tm_hour, sbt.tm_min, set.tm_hour, set.tm_min, curepg[1]['name']))
         else:
             controlEpg.setLabel('Нет программы')
+            controlEpg1.setLabel('Нет программы')
             progress.setPercent(1)
 
     def Stop(self):
@@ -98,7 +100,7 @@ class MyPlayer(xbmcgui.WindowXML):
             self.parent.showStatus("Неизвестный тип контента")
             return
         if not data:
-            self.parent.showStatus("Ошибка Torrent-TV.RU")
+            self.parent.showStatus("Ошибка Torrent-TV.AML")
             return
         jdata = json.loads(data);
         print jdata

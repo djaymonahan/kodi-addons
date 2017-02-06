@@ -3,7 +3,6 @@ import xbmc
 from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 
 import threading
-
 import defines
 
 class MyThread(threading.Thread):
@@ -12,7 +11,6 @@ class MyThread(threading.Thread):
         threading.Thread.__init__(self)
         self.func = func
         self.params = params
-        #self.parent = parent
 
     def run(self):
         self.func(self.params)
@@ -47,10 +45,10 @@ class InfoForm(xbmcgui.WindowXMLDialog):
         print 'OnInit infoform %s' % self.parent
         if self.parent and self.parent.user:
             userLabel.setLabel(self.parent.user["login"])
-            if float(self.parent.user["ballance"]) > 7:
-                ballanceLabel.setLabel("[COLOR=blue]%sp.[/COLOR]" % self.parent.user["ballance"])
+            if float(self.parent.user['balance']) > 7:
+                ballanceLabel.setLabel("[COLOR=blue]%sp.[/COLOR]" % self.parent.user['balance'])
             else:
-                ballanceLabel.setLabel("[COLOR=red]%sp.[/COLOR]" % self.parent.user["ballance"])
+                ballanceLabel.setLabel("[COLOR=red]%sp.[/COLOR]" % self.parent.user['balance'])
         
         self.portLabel.setLabel("%s (Проверяется)" % self.outport, "Проверка")
 
@@ -65,14 +63,11 @@ class InfoForm(xbmcgui.WindowXMLDialog):
             self.ASLabel.setLabel(text)
 
     def getAddr(self, params):
-        data = defines.GET("http://2ip.ru/")
+        data = defines.GET("https://2ip.ru/")
         beautifulSoup = BeautifulSoup(data)
-        addr = beautifulSoup.find('big', attrs={'id': 'd_clip_button'})
+        addr = beautifulSoup.find('big', attrs={'id' : 'd_clip_button'})
         addr = addr.string
         self.addrLabel.setLabel(addr)
-        
-        print "InfoForm адрес получен"
-        
 
     def checkPort(self, params):
         if not defines.checkPort(params):

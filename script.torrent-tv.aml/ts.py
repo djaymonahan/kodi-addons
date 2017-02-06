@@ -1,8 +1,4 @@
-﻿# Copyright (c) 20131 Torrent-TV.RU
-# Writer (c) 2014, Welicobratov K.A., E-mail: 07pov23@gmail.com
-
-#imports
-import xbmc
+﻿import xbmc
 import xbmcaddon
 import xbmcgui
 
@@ -19,7 +15,6 @@ import time
 
 import defines
 
-#from player import MyPlayer
 from adswnd import AdsForm
 
 #defines

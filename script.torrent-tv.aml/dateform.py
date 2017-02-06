@@ -102,15 +102,11 @@ class DateForm(xbmcgui.WindowXMLDialog):
             else:
                 if selItem.getProperty("type") == "day":
                     print 'Choose day is %s' % selItem.getProperty("date")
-                    #self.date = datetime.datetime.fromtimestamp(time.mktime(time.strptime(selItem.getProperty("date"), "%Y-%m-%d")))
-                    #self.date = datetime.datetime.strptime(selItem.getProperty("date"), "%Y-%m-%d")
                     date = time.strptime(selItem.getProperty("date"), "%Y-%m-%d")
                     self.date = datetime.date(date.tm_year, date.tm_mon, date.tm_mday)
                     self.close()
                 elif selItem.getProperty("type") == "month":
                     print 'Choose month is %s' % selItem.getProperty("date")
-                    #value = datetime.datetime.fromtimestamp(time.mktime(time.strptime(selItem.getProperty("date"), "%Y-%m-%d")))
-                    #value = datetime.datetime.strptime(selItem.getProperty("date"), "%Y-%m-%d")
                     stime = time.strptime(selItem.getProperty("date"), "%Y-%m-%d")
                     value = datetime.date(stime.tm_year, stime.tm_mon, stime.tm_mday)
                     self.fillDays(value)
@@ -120,4 +116,3 @@ class DateForm(xbmcgui.WindowXMLDialog):
                     self.fillMonth(date)
 
         super(DateForm, self).onClick(controlId)
-

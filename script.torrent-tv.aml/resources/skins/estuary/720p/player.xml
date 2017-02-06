@@ -26,11 +26,20 @@
             <height>210</height>
             <texture border="40">window.png</texture>
           </control>
+          <control type="image">
+            <posx>5</posx>
+            <posy>600</posy>
+            <width>1270</width>
+            <height>210</height>
+            <texture border="40">window.png</texture>
+          </control>
         </control>
         <control type="label">
           <description>Time</description>
           <posx>1200</posx>
-          <posy>610</posy>
+          <posy>670</posy>
+          <width>130</width>
+          <height>20</height>
           <font>font13</font>
           <visible>true</visible>
           <label>$INFO[System.Time]</label>
@@ -161,15 +170,13 @@
             <control type="label" id ="112">
               <description>Next EPG</description>
               <posx>135</posx>
-              <posy>75</posy>
-              <align>left</align>
-              <aligny>top</aligny>
+              <posy>70</posy>
               <width>1000</width>
-              <height>30</height>
-              <font>font12</font>
-              <visible>true</visible>
-              <label></label>
+              <label>Нет программы</label>
+              <font>font13</font>
               <scroll>true</scroll>
+              <textcolor>FFFFFFFF</textcolor>
+              <shadowcolor>FF000000</shadowcolor>
             </control>
           </control>
         </control>

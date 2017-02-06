@@ -210,7 +210,7 @@ class WMainForm(xbmcgui.WindowXML):
                 self.showStatus(jdata['error'])
                 return
 
-            self.user = {"login" : defines.ADDON.getSetting('login'), "balance" : jdata["balance"]}
+            self.user = {"login" : defines.ADDON.getSetting('login'), "balance" : jdata['balance']}
             
             self.session = jdata['session']
             self.updateList()

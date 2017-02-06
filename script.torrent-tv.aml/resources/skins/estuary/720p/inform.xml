@@ -54,7 +54,7 @@
           <control type="label">
               <posx>520</posx>
               <posy>230</posy>
-              <width>200</width>
+              <width>300</width>
               <height>150</height>
               <font>font10</font>
               <visible>true</visible>
@@ -62,12 +62,12 @@
           </control>
           <control type="label">
               <posx>520</posx>
-              <posy>280</posy>
+              <posy>335</posy>
               <width>350</width>
-              <height>100</height>
+              <height>80</height>
               <font>font10</font>
               <visible>true</visible>
-              <label>© 2012-2017 Hillside Assets Ltd. Все права защищены</label>
+              <label>© 2017 Hillside Assets Ltd.</label>
           </control>
           <control type="label">
               <posx>380</posx>
@@ -114,7 +114,7 @@
               <height>50</height>
               <font>font10</font>
               <visible>true</visible>
-              <label>[B]Состояние AceStream:[/B]</label>
+              <label>[B][COLOR=blue]Состояние AceStream:[/COLOR][/B]</label>
           </control>
           <control type="label">
               <posx>380</posx>

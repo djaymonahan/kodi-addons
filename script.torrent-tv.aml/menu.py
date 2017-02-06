@@ -1,7 +1,4 @@
-﻿# Copyright (c) 2013 Torrent-TV.RU
-# Writer (c) 2013, Welicobratov K.A., E-mail: 07pov23@gmail.com
-
-import xbmcgui
+﻿import xbmcgui
 import time
 import xbmcaddon
 import json

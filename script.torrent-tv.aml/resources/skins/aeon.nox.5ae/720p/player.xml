@@ -20,10 +20,17 @@
         <control type="group">
           <description>Window</description>
           <control type="image">
-            <posx>5</posx>
-            <posy>600</posy>
+            <posx>4</posx>
+            <posy>580</posy>
             <width>1270</width>
-            <height>210</height>
+            <height>230</height>
+            <texture border="40">window.png</texture>
+          </control>
+          <control type="image">
+            <posx>4</posx>
+            <posy>580</posy>
+            <width>1270</width>
+            <height>230</height>
             <texture border="40">window.png</texture>
           </control>
         </control>
@@ -140,7 +147,8 @@
             <control type="label" id = "109">
               <description>Current EPG</description>
               <posx>135</posx>
-              <posy>30</posy>
+              <posy>10</posy>
+              <height>50</height>
               <width>1000</width>
               <label>Нет программы</label>
               <font>font13</font>
@@ -151,9 +159,8 @@
             <control type="progress" id ="110">
               <description>Progress EGP</description>
               <posx>130</posx>
-              <posy>60</posy>
+              <posy>58</posy>
               <visible>true</visible>
-              <colordiffuse>88FFFFFF</colordiffuse>
               <width>1100</width>
               <height>9</height>
               <info>ListItem.Progress</info>
@@ -161,15 +168,15 @@
             <control type="label" id ="112">
               <description>Next EPG</description>
               <posx>135</posx>
-              <posy>75</posy>
-              <align>left</align>
-              <aligny>top</aligny>
+              <posy>60</posy>
+              <height>50</height>
               <width>1000</width>
-              <height>30</height>
-              <font>font12</font>
+              <label>Нет программы</label>
+              <font>font13</font>
               <visible>true</visible>
-              <label></label>
               <scroll>true</scroll>
+              <textcolor>FFFFFFFF</textcolor>
+              <shadowcolor>FF000000</shadowcolor>
             </control>
           </control>
         </control>
