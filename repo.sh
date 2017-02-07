@@ -16,7 +16,7 @@ COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 ################################################################################
 
-ADDON_LIST="script.torrent-tv.aml"
+ADDON_LIST="script.torrent-tv.aml script.module.torrent.ts"
 
 REPO_DIR="repo"
 PY_GEN="generator.py"
