@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+	<addon id="plugin.video.zona.mobi"
+       name="Zona.Mobi"
+       version="0.1.0"
+       provider-name="Evgenii Devisok aka evgen_dev (Alex@ELEC)">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.xbmcup"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" provides="video" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <news>
+Zona.Mobi - Полнометражное кино и телесериалы
+        </news>
+		<summary>Zona.Mobi</summary>
+		<description>Zona.Mobi - Полнометражное кино и телесериалы</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.alexelec.in.ua</forum>
+		<website>http://www.alexelec.in.ua</website>
+		<source>https://github.com/AlexELEC/kodi-addons</source>
+	</extension>
+</addon>

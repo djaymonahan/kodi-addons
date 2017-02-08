@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="31001">
+		<setting label="31004" type="lsep"/>
+		<setting id="cache_time" type="number" label="31009" default="10" />
+		<setting label="31010" type="action" action="RunScript($CWD/settings.py, clear_cache)"/>
+		<setting id="bookmark_dir" type="bool" visible="false" label="" default="0" />
+		<setting label="34022" type="lsep"/>
+		<setting id="search_history" type="number" label="34023" default="20" />
+	</category>
+</settings>

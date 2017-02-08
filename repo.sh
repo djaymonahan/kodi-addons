@@ -16,7 +16,10 @@ COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 ################################################################################
 
-ADDON_LIST="script.torrent-tv.aml script.module.torrent.ts"
+ADDON_LIST="script.torrent-tv.aml \
+            script.module.torrent.ts \
+            script.module.xbmcup \
+            plugin.video.zona.mobi"
 
 REPO_DIR="repo"
 PY_GEN="generator.py"
@@ -51,7 +54,7 @@ for addon in $ADDON_LIST; do
   echo -e "${COL_YELLOW}  create zip package:${COL_MAGENTA} $addon-$addon_ver.zip${COL_RESET}"
   zip -rq $REPO_DIR/$addon/$addon-$addon_ver.zip $addon
   cp -P $addon/addon.xml $REPO_DIR/$addon
-  cp -P $addon/*.png $REPO_DIR/$addon
+  cp -P $addon/*.png $REPO_DIR/$addon 2>/dev/null || true
   cp -P $addon/*.jpg $REPO_DIR/$addon 2>/dev/null || true
   cp -P $addon/*.txt $REPO_DIR/$addon 2>/dev/null || true
   echo -e "${COL_YELLOW}     create md5sum's:${COL_MAGENTA} $addon-$addon_ver.zip.md5${COL_RESET}"
