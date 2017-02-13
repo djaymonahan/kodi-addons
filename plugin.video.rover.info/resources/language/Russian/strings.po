@@ -1,0 +1,239 @@
+# Kodi Media Center language file
+# Translators:
+# Roman Miroshnychenko <romanvm@yandex.ru>, 2016
+msgid ""
+msgstr ""
+"Last-Translator: Roman Miroshnychenko <romanvm@yandex.ru>, 2016\n"
+"Language-Team: Russian (https://www.transifex.com/romanvm/teams/65027/ru/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgctxt "#32000"
+msgid "General"
+msgstr "Общие"
+
+msgctxt "#32001"
+msgid "Rover.Info language"
+msgstr "Язык Rover.Info"
+
+msgctxt "#32002"
+msgid "Items per page"
+msgstr "Объектов на страницу"
+
+msgctxt "#32003"
+msgid "High quality posters"
+msgstr "Постеры высокого качества"
+
+msgctxt "#32004"
+msgid "Home"
+msgstr "Главная"
+
+msgctxt "#32005"
+msgid "Previous"
+msgstr "Назад"
+
+msgctxt "#32006"
+msgid "Next"
+msgstr "Вперед"
+
+msgctxt "#32007"
+msgid "Search..."
+msgstr "Поиск..."
+
+msgctxt "#32008"
+msgid "Search in the category..."
+msgstr "Поиск в категории..."
+
+msgctxt "#32009"
+msgid "Mark as watched/unwatched"
+msgstr "Просмотрено/не просмотрено"
+
+msgctxt "#32010"
+msgid "Search query"
+msgstr "Поисковый запрос"
+
+msgctxt "#32011"
+msgid "No results found"
+msgstr "Ничего не найдено"
+
+msgctxt "#32012"
+msgid "Refine your search and try again"
+msgstr "Уточните запрос и повторите попытку"
+
+msgctxt "#32013"
+msgid "Show \"<< Home\" link"
+msgstr "Показывать ссылку \"<< Главная\""
+
+msgctxt "#32014"
+msgid "Cache pages"
+msgstr "Кэшировать страницы"
+
+msgctxt "#32015"
+msgid "Save search history"
+msgstr "Сохранять историю поиска"
+
+msgctxt "#32016"
+msgid "Search history length"
+msgstr "Длина истории поиска"
+
+msgctxt "#32017"
+msgid "Search history"
+msgstr "История поиска"
+
+msgctxt "#32018"
+msgid "Mediafile selection method"
+msgstr "Метод выбора медиафайла"
+
+msgctxt "#32019"
+msgid "Default"
+msgstr "По умолчанию"
+
+msgctxt "#32020"
+msgid "Selection dialog"
+msgstr "Диалог выбора"
+
+msgctxt "#32021"
+msgid "Lightweight version"
+msgstr "Облегченная версия"
+
+msgctxt "#32022"
+msgid "Mirror {0}"
+msgstr "Зеркало {0}"
+
+msgctxt "#32023"
+msgid "Select media to play"
+msgstr "Выберите файл для проигрывания"
+
+msgctxt "#32024"
+msgid "Navigation"
+msgstr "Навигация"
+
+msgctxt "#32025"
+msgid "Warning!"
+msgstr "Внимание!"
+
+msgctxt "#32026"
+msgid "Do you really want to clear plugin cache?"
+msgstr "Действительно очистить кэш?"
+
+msgctxt "#32027"
+msgid "Plugin cache cleaned successfully"
+msgstr "Кэш успешно очищен."
+
+msgctxt "#32028"
+msgid "Authorization"
+msgstr "Авторизация"
+
+msgctxt "#32029"
+msgid "Use Rover.Info credentials"
+msgstr "Использовать учетные данные Rover.Info"
+
+msgctxt "#32030"
+msgid "Save password (not recommended)"
+msgstr "Сохранять пароль (не рекомендуется)"
+
+msgctxt "#32031"
+msgid "Clear cookies (site logoff)"
+msgstr "Очистить куки (выход из сайта)"
+
+msgctxt "#32032"
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+msgctxt "#32033"
+msgid "Password:"
+msgstr "Пароль:"
+
+msgctxt "#32034"
+msgid "Text on the picture:"
+msgstr "Текст на картинке:"
+
+msgctxt "#32035"
+msgid "Cancel"
+msgstr "Отмена"
+
+msgctxt "#32036"
+msgid "Login"
+msgstr "Вход"
+
+msgctxt "#32037"
+msgid "Rover.Info login"
+msgstr "Вход на Rover.Info"
+
+msgctxt "#32038"
+msgid "My bookmarks"
+msgstr "Мои запомненные"
+
+msgctxt "#32039"
+msgid "Login error!"
+msgstr "Ошибка входа!"
+
+msgctxt "#32040"
+msgid "Check your login and password, and try again."
+msgstr "Проверьте логин и пароль, а затем повторите попытку."
+
+msgctxt "#32041"
+msgid "Rover.Info content"
+msgstr "Содержимое Rover.Info"
+
+msgctxt "#32042"
+msgid "Video and Audio"
+msgstr "Видео и аудио"
+
+msgctxt "#32043"
+msgid "Video"
+msgstr "Видео"
+
+msgctxt "#32044"
+msgid "Audio"
+msgstr "Аудио"
+
+msgctxt "#32045"
+msgid "Clear cache"
+msgstr "Очистить кэш"
+
+msgctxt "#32046"
+msgid "Clear search history"
+msgstr "Очистить историю поиска"
+
+msgctxt "#32047"
+msgid "Do you really want to clear search history?"
+msgstr "Действительно очистить историю поиска?"
+
+msgctxt "#32048"
+msgid "Search history cleaned successfully"
+msgstr "История поиска успешно очищена"
+
+msgctxt "#32049"
+msgid "Do you really want to clear cookies?"
+msgstr "Действительно очистить куки?"
+
+msgctxt "#32050"
+msgid "Cookies cleaned successfully"
+msgstr "Куки успешно очищены"
+
+msgctxt "#32051"
+msgid "Show info"
+msgstr "Сведения"
+
+msgctxt "#32052"
+msgid "Original media"
+msgstr "Оригинальний файл"
+
+msgctxt "#32053"
+msgid "Add to Rover.Info bookmarks"
+msgstr "Запомнить на Rover.Info"
+
+msgctxt "#32054"
+msgid "Item added to Rover.Info bookmarks"
+msgstr "Объект запомнен на Rover.Info"
+
+msgctxt "#32055"
+msgid "Remove from Rover.Info bookmarks"
+msgstr "Удалить из запомненных Rover.Info"
+
+msgctxt "#32056"
+msgid "Item removed from Rover.Info bookmarks"
+msgstr "Объект удален из запомненных Rover.Info"
