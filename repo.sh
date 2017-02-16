@@ -19,8 +19,7 @@ COL_CYAN=$ESC_SEQ"36;01m"
 ADDON_LIST="script.torrent-tv.aml \
             script.module.torrent.ts \
             script.module.xbmcup \
-            plugin.video.zona.mobi \
-            plugin.video.rover.info"
+            plugin.video.zona.mobi"
 
 REPO_DIR="repo"
 PY_GEN="generator.py"
