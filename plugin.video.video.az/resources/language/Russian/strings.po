@@ -1,0 +1,79 @@
+# Kodi Media Center language file
+# Addon Name: Video.AZ
+# Addon id: plugin.video.video.az
+# Addon Provider: vl.maksime
+
+msgid ""
+msgstr ""
+
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+msgctxt "#30000"
+msgid "Movies"
+msgstr "Кино"
+
+msgctxt "#30001"
+msgid "TV Series"
+msgstr "Сериалы"
+
+msgctxt "#30002"
+msgid "Search"
+msgstr "Поиск"
+
+msgctxt "#30003"
+msgid "Videos"
+msgstr "Видео"
+
+msgctxt "#30004"
+msgid "Season"
+msgstr "Сезон"
+
+msgctxt "#30005"
+msgid "Episode"
+msgstr "Серия"
+
+msgctxt "#30006"
+msgid "Next page..."
+msgstr "Далее..."
+
+msgctxt "#30007"
+msgid "New Search..."
+msgstr "Новый поиск..."
+
+msgctxt "#30010"
+msgid "Video Stream"
+msgstr "Поток видео"
+
+msgctxt "#30011"
+msgid "Video Quality"
+msgstr "Качество видео"
+
+msgctxt "#30012"
+msgid "Movie Language"
+msgstr "Дубляж"
+
+msgctxt "#30013"
+msgid "All"
+msgstr "Все"
+
+msgctxt "#30014"
+msgid "Azərbaycanca"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Русский"
+msgstr ""
+
+msgctxt "#30016"
+msgid "English"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Türkçe"
+msgstr ""
+
+msgctxt "#30018"
+msgid "File names for saving with 'Add To Lib'"
+msgstr "Имена файлов для распознования в 'Add To Lib'"
