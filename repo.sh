@@ -20,6 +20,7 @@ ADDON_LIST="script.torrent-tv.aml \
             script.module.torrent.ts \
             script.module.xbmcup \
             plugin.video.tree.tv.dev \
+            plugin.video.fs.ua \
             plugin.video.zona.mobi"
 
 REPO_DIR="repo"
