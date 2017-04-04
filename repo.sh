@@ -16,14 +16,25 @@ COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 ################################################################################
 
-ADDON_LIST="script.torrent-tv.aml \
-            script.module.torrent.ts \
-            script.module.xbmcup \
-            plugin.video.tree.tv.dev \
-            plugin.video.fs.ua \
-            plugin.video.zona.mobi"
+FOR_SYS=$1
+[ -z $FOR_SYS ] && FOR_SYS="aml"
 
-REPO_DIR="repo"
+if [ $FOR_SYS == "aml" ]; then
+  REPO_DIR="repo-aml"
+  ADDON_LIST="script.torrent-tv.aml \
+              script.module.torrent.ts \
+              script.module.xbmcup \
+              plugin.video.tree.tv.dev \
+              plugin.video.fs.ua \
+              plugin.video.zona.mobi"
+elif [ $FOR_SYS == "rpi" ]; then
+  REPO_DIR="repo-rpi"
+  ADDON_LIST="script.torrent-tv.rpi \
+              script.module.xbmcup \
+              plugin.video.fs.ua \
+              plugin.video.zona.mobi"
+fi
+
 PY_GEN="generator.py"
 
 echo -e "${COL_YELLOW}Creating repository...${COL_RESET}"

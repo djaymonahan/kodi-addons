@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.torrent-tv.rpi"
+       name="Torrent-TV RPI"
+       version="1.5.5"
+       provider-name="AlexELEC">
+    <requires>
+        <import addon="os.alexelec" version="2.0"/>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.beautifulsoup"/>
+        <import addon="script.module.torrent.ts"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension library="autostart.py" point="xbmc.service" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Torrent-TV RPI</summary>
+        <description>Торрент ТВ теперь можно смотреть на медиаплатформе KODI.</description>
+        <platform>all</platform>
+    </extension>
+</addon>
