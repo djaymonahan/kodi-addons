@@ -26,6 +26,7 @@ if [ $FOR_SYS == "aml" ]; then
               script.module.xbmcup \
               plugin.video.tree.tv.dev \
               plugin.video.fs.ua \
+              script.torrent-tv.ae \
               plugin.video.zona.mobi"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
@@ -37,7 +38,7 @@ fi
 
 PY_GEN="generator.py"
 
-echo -e "${COL_YELLOW}Creating repository...${COL_RESET}"
+echo -e "${COL_YELLOW}Creating repository for $FOR_SYS...${COL_RESET}"
 echo ""
 mkdir -p $REPO_DIR
 rm -fr $REPO_DIR/*

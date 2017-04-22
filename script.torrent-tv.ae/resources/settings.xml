@@ -1,0 +1,25 @@
+<settings>
+	<category label="Основные">
+		<setting default="" id="login" label="Логин" type="text" />
+		<setting default="" id="password" label="Пароль" option="hidden" type="text" />
+		<setting default="estuary" id="skin" label="Обложка" type="labelenum" values="aeon.nox.5ae|estuary" />
+		<setting default="0" id="engine" label="Используемый P2P-Клиент" type="enum" values="Noxbit|AceStream|TSProxy" />
+	</category>
+	<category label="Noxbit">
+		<setting id="nox_path" label="Путь к Noxbit" type="folder" />
+		<setting default="127.0.0.1" id="nox_ip" label="IP-Адрес" type="ipaddress" />
+		<setting default="6689" id="nox_port" label="Порт" type="number" />
+		<setting default="false" id="nox_hls" label="Использовать HLS" type="bool" />
+	</category>
+  <category label="TSProxy">
+    <setting default="0" id="proxy_zoneid" label="ID зоны вещания" type="enum" values="Автоматическое определение|Москва|Санкт-Петербург|Уфа / Самара|Амстердам|Израиль|Новосибирск" />
+    <setting default="false" id="proxy_hls" label="Использовать HLS" type="bool" />
+  </category>
+	<category label="AceStream">
+		<setting default="0" id="gender" label="Пол" type="enum" values="Мужской|Женский" />
+		<setting default="4" id="age" label="Возраст" type="enum" values="Младше 13|13-17|18-24|25-34|35-44|45-54|55-64|Старше 64" />
+		<setting default="true" id="winmode" label="Оконный режим плеера" type="bool" />
+		<setting default="8621" id="outport" label="Внеший порт AceStream" type="number" />
+		<setting default="" id="uuid" type="text" visible="false" />
+	</category>
+</settings>
