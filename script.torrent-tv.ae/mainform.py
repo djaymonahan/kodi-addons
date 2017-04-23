@@ -22,9 +22,6 @@ import socket
 #import settings_manager
 import defines
 
-
-#defines.showMessage("mainform init")
-
 def LogToXBMC(text, type = 1):
     ttext = ''
     if type == 2:
@@ -62,6 +59,7 @@ class WMainForm(xbmcgui.WindowXML):
         self.isCanceled = False
         self.translation = []
         self.category = {}
+        self.category_tmp = None
         self.seltab = 0
         self.epg = {}
         self.archive = []
@@ -109,54 +107,60 @@ class WMainForm(xbmcgui.WindowXML):
         self.translation = []
 
     def getChannels(self, param):
-        data = defines.GET('http://1ttvxbmc.top/v3/translation_list.php?session=%s&type=%s&typeresult=json' % (self.session, param), cookie = self.session)
-        jdata = json.loads(data)
-        if jdata['success'] == 0:
-            self.showStatus(jdata['error'])
-            return
+        if not self.category_tmp:
+            data = defines.GET('http://1ttvxbmc.top/v3/translation_list.php?session=%s&type=%s&typeresult=json' % (self.session, param), cookie = self.session)
+            jdata = json.loads(data)
+            if jdata['success'] == 0:
+                self.showStatus(jdata['error'])
+                return
 
-        for cat in jdata["categories"]:
-            if not self.category.has_key('%s' % cat["id"]):
-                self.category['%s' % cat["id"]] = { "name": cat["name"], "channels": [] }
+            for cat in jdata["categories"]:
+                if not self.category.has_key('%s' % cat["id"]):
+                    self.category['%s' % cat["id"]] = { "name": cat["name"], "channels": [] }
 
-        for ch in jdata['channels']:
-            if not ch["name"]:
-                continue
-            if not ch['logo']:
-                ch['logo'] = ''
-            else:
-                ch['logo'] = 'http://torrent-tv.ru/uploads/' + ch['logo']
+            for ch in jdata['channels']:
+                if not ch["name"]:
+                    continue
+                if not ch['logo']:
+                    ch['logo'] = ''
+                else:
+                    ch['logo'] = 'http://torrent-tv.ru/uploads/' + ch['logo']
             
-            chname = ch["name"]
-            if ch["access_user"] == 0:
-                chname = "[COLOR FF646464]%s[/COLOR]" % chname
-            elif self.engine == defines.ENGINE_PROXY and ch["access_user_http_stream"] == 0:
-                chname = "[COLOR FF646464]%s[/COLOR]" % chname
-            
-            li = xbmcgui.ListItem(chname, '%s' % ch['id'], ch['logo'], ch['logo'])
-            li.setProperty('epg_cdn_id', '%s' % ch['epg_id'])
-            li.setProperty('icon', ch['logo'])
-            li.setProperty("type", "channel")
-            li.setProperty("id", '%s' % ch["id"])
-            li.setProperty("access_translation", ch["access_translation"])
-            if self.engine == defines.ENGINE_PROXY:
-                li.setProperty("access_user", '%s' % ch["access_user_http_stream"])
-            else:
-                li.setProperty("access_user", '%s' % ch["access_user"])
-            
-            if param == 'channel':
-                li.setProperty('commands', "%s,%s" % (MenuForm.CMD_ADD_FAVOURITE, MenuForm.CMD_CLOSE_TS))
-                self.category['%s' % ch['group']]["channels"].append(li)
-            elif param == 'moderation':
-                li.setProperty('commands', "%s,%s" % (MenuForm.CMD_ADD_FAVOURITE, MenuForm.CMD_CLOSE_TS))
-                self.category[WMainForm.CHN_TYPE_MODERATION]["channels"].append(li)
-            elif param == 'translation':
-                li.setProperty('commands', "%s,%s" % (MenuForm.CMD_ADD_FAVOURITE, MenuForm.CMD_CLOSE_TS))
-                self.translation.append(li)
-            elif param == 'favourite':
-                li.setProperty('commands', "%s,%s,%s,%s" % (MenuForm.CMD_DEL_FAVOURITE, MenuForm.CMD_UP_FAVOURITE, MenuForm.CMD_DOWN_FAVOURITE, MenuForm.CMD_CLOSE_TS))
-                self.category[WMainForm.CHN_TYPE_FAVOURITE]["channels"].append(li)
-            
+                chname = ch["name"]
+                if ch["access_user"] == 0:
+                    chname = "[COLOR FF646464]%s[/COLOR]" % chname
+                elif self.engine == defines.ENGINE_PROXY and ch["access_user_http_stream"] == 0:
+                    chname = "[COLOR FF646464]%s[/COLOR]" % chname
+
+                li = xbmcgui.ListItem(chname, '%s' % ch['id'], ch['logo'], ch['logo'])
+                li.setProperty('epg_cdn_id', '%s' % ch['epg_id'])
+                li.setProperty('icon', ch['logo'])
+                li.setProperty("type", "channel")
+                li.setProperty("id", '%s' % ch["id"])
+                li.setProperty("access_translation", ch["access_translation"])
+                if self.engine == defines.ENGINE_PROXY:
+                    li.setProperty("access_user", '%s' % ch["access_user_http_stream"])
+                else:
+                    li.setProperty("access_user", '%s' % ch["access_user"])
+
+                if param == 'channel':
+                    li.setProperty('commands', "%s,%s" % (MenuForm.CMD_ADD_FAVOURITE, MenuForm.CMD_CLOSE_TS))
+                    self.category['%s' % ch['group']]["channels"].append(li)
+                elif param == 'moderation':
+                    li.setProperty('commands', "%s,%s" % (MenuForm.CMD_ADD_FAVOURITE, MenuForm.CMD_CLOSE_TS))
+                    self.category[WMainForm.CHN_TYPE_MODERATION]["channels"].append(li)
+                elif param == 'translation':
+                    li.setProperty('commands', "%s,%s" % (MenuForm.CMD_ADD_FAVOURITE, MenuForm.CMD_CLOSE_TS))
+                    self.translation.append(li)
+                elif param == 'favourite':
+                    li.setProperty('commands', "%s,%s,%s,%s" % (MenuForm.CMD_DEL_FAVOURITE, MenuForm.CMD_UP_FAVOURITE, MenuForm.CMD_DOWN_FAVOURITE, MenuForm.CMD_CLOSE_TS))
+                    self.category[WMainForm.CHN_TYPE_FAVOURITE]["channels"].append(li)
+
+            self.category_tmp = self.category
+
+        else:
+            self.category = self.category_tmp
+
     def getArcChannels(self, param):
         data = defines.GET('http://1ttvxbmc.top/v3/arc_list.php?session=%s&typeresult=json' % self.session, cookie = self.session)
         jdata = json.loads(data)
@@ -220,7 +224,6 @@ class WMainForm(xbmcgui.WindowXML):
               guid = str(uuid.uuid1())
               defines.ADDON.setSetting("uuid", guid)
             guid = guid.replace('-', '')
-
             print guid
             data = defines.GET('http://1ttvxbmc.top/v3/auth.php?username=%s&password=%s&typeresult=json&application=xbmc&guid=%s' % (defines.ADDON.getSetting('login'), defines.ADDON.getSetting('password'), guid))
             jdata = json.loads(data)
@@ -260,8 +263,7 @@ class WMainForm(xbmcgui.WindowXML):
                     self.showStatus('Загрузка программы')
                     thr = defines.MyThread(self.getEpg, epg_id)
                     thr.start()
-                
-                
+
                 thr = defines.MyThread(self.showScreen, selItem.getLabel2())
                 thr.start()
                 img = self.getControl(1111)
@@ -354,7 +356,7 @@ class WMainForm(xbmcgui.WindowXML):
                 if not find:
                     self.fillRecords(self.archive[0], datefrm.date)
                     return
-            
+
             if selItem.getProperty("access_user") == 0:
                 access = selItem.getProperty("access_translation")
                 if access == "registred":
@@ -375,7 +377,7 @@ class WMainForm(xbmcgui.WindowXML):
                 return
             print selItem.getProperty("type")
             self.playditem = self.selitem_id
-            
+
             self.player.Start(buf)
             LogToXBMC("Stoped video");
             if xbmc.getCondVisibility("Window.IsVisible(home)"):
@@ -538,7 +540,8 @@ class WMainForm(xbmcgui.WindowXML):
         self.img_progress.setVisible(False)
         self.hideStatus()
         LogToXBMC(self.selitem_id)
-        
+        xbmc.sleep(500)
+        self.setFocus(self.getControl(WMainForm.CONTROL_LIST))
 
     def showStatus(self, str):
         if self.img_progress: self.img_progress.setVisible(True)
