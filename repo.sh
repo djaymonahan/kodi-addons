@@ -21,18 +21,16 @@ FOR_SYS=$1
 
 if [ $FOR_SYS == "aml" ]; then
   REPO_DIR="repo-aml"
-  ADDON_LIST="script.torrent-tv.aml \
-              script.module.torrent.ts \
+  ADDON_LIST="script.module.torrent.ts \
               script.module.xbmcup \
-              plugin.video.tree.tv.dev \
-              plugin.video.fs.ua \
               script.torrent-tv.ae \
-              plugin.video.zona.mobi"
+              plugin.video.zona.mobi \
+              repository.exodus \
+              plugin.video.exodus"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
   ADDON_LIST="script.torrent-tv.rpi \
               script.module.xbmcup \
-              plugin.video.fs.ua \
               plugin.video.zona.mobi"
 fi
 
