@@ -25,8 +25,7 @@ if [ $FOR_SYS == "aml" ]; then
               script.module.xbmcup \
               script.torrent-tv.ae \
               plugin.video.zona.mobi \
-              repository.exodus \
-              plugin.video.exodus"
+              repository.exodus"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
   ADDON_LIST="script.torrent-tv.rpi \
