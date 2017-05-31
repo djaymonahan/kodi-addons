@@ -242,7 +242,6 @@ class TSengine(xbmc.Player):
             LogToXBMC('Connetct to TS')
             self.connectToTS()
         except Exception, e:
-            LogToXBMC('ERROR Connect to TS: %s' % e, 2)
             return
         
     def sendCommand(self, cmd):
@@ -390,9 +389,6 @@ class TSengine(xbmc.Player):
                 self.thr.msg = TSMessage()
                 if self.amalker:
                     self.parent.showStatus('Рекламный ролик')
-                #    self.parent.player.doModal()
-                #else:
-                #    self.parent.amalker.show()
                 LogToXBMC('Первый запуск. Окно = %s. Реклама = %s' % (xbmcgui.getCurrentWindowId(), self.amalker))
                 self.icon = icon
                 self.thumb = thumb
@@ -403,6 +399,7 @@ class TSengine(xbmc.Player):
                     self.play(self.link, lit)
                 self.playing = True
                 self.paused = False
+                self.loopShow()
                 self.loop()
             except Exception, e:
                 LogToXBMC(e, 2)
@@ -415,13 +412,24 @@ class TSengine(xbmc.Player):
             if self.parent: self.parent.showStatus("Неверный ответ от TS. Операция прервана")
             self.tsstop()
 
-    def loop(self):
-        #xbmc.sleep(500)
-        a = 0
+    def loopShow(self):
         while self.playing:
-            #if not self.isPlayingVideo():
-            #    break
+            if self.isPlayingVideo() and self.winmode and self.getTime() > 1.0:
+                self.parent.player.show()
+                break
+            try:
+                if xbmc.abortRequested:
+                    LogToXBMC("XBMC Shutdown")
+                    break;
+                xbmc.sleep(250)
 
+            except:
+                LogToXBMC('ERROR loopShow')
+                self.parent.close()
+                return
+
+    def loop(self):
+        while self.playing:
             if self.isPlayingVideo() and self.amalker and (self.getTotalTime() - self.getTime()) < 0.5:
                 self.parent.amalkerWnd.close()
                 break
@@ -430,9 +438,6 @@ class TSengine(xbmc.Player):
                     LogToXBMC("XBMC Shutdown")
                     break;
                 xbmc.sleep(250)
-                #if not self.isPlaying() and self.playing:
-                #    self.tsstop()
-                #    break
 
             except:
                 LogToXBMC('ERROR SLEEPING')
@@ -548,7 +553,6 @@ class SockThread(threading.Thread):
                     cmds = self.lastRecv.split('\r\n')
                     for cmd in cmds:
                         if cmd.replace(' ', '').__len__() > 0:
-                            #LogToXBMC('RUN Получена комманда = ' + cmd)
                             self._constructMsg(cmd)
                     self.lastRecv = ''
             except Exception, e:
@@ -560,9 +564,6 @@ class SockThread(threading.Thread):
                 _msg.type = TSMessage.ERROR
                 _msg.params = 'Ошибка соединения с TS'
                 self.state_method(_msg)
-                #self.owner.end()
-                #self.owner.connectToTS()
-                #self.owner.parent.close()
         LogToXBMC('Close from threed')
         self.error = None
 

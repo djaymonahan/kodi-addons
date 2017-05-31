@@ -62,7 +62,7 @@ class MyPlayer(xbmcgui.WindowXML):
             defines.ADDON.setSetting("engine", "0")
             defines.ADDON.setSetting("nox_ip","127.0.0.1")
             defines.ADDON.setSetting("nox_port","6689")
-            self.use_nox = True;
+            self.use_nox = True
 
     def onInit(self):
         if not self.li:
@@ -114,10 +114,10 @@ class MyPlayer(xbmcgui.WindowXML):
         else:
             print "use acestream"
             self.StartTS(li)
-        return;
+        return
 
     def StartProxy(self, li):
-        session = self.parent.session;
+        session = self.parent.session
         id = li.getProperty("id")
         zonid = defines.ADDON.getSetting("proxy_zoneid")
         print "proxy_hls = %s" % defines.ADDON.getSetting("proxy_hls")
@@ -127,7 +127,7 @@ class MyPlayer(xbmcgui.WindowXML):
         if (li.getProperty("type") == "channel"):
             data = defines.GET("http://1ttvxbmc.top/v3/translation_http.php?session=%s&channel_id=%s&typeresult=json&zone_id=%s&nohls=%s" % (session, id, zonid, nohls))
         elif (li.getProperty("type") == "record"):
-            data = defines.GET("http://1ttvxbmc.top/v3/arc_http.php?session=%s&record_id=%s&typeresult=json" % (self.parent.session, li.getProperty("id")));
+            data = defines.GET("http://1ttvxbmc.top/v3/arc_http.php?session=%s&record_id=%s&typeresult=json" % (self.parent.session, li.getProperty("id")))
         jdata = json.loads(data)
         if not jdata["success"]:
             self.parent.showStatus("Канал временно не доступен")
@@ -146,7 +146,7 @@ class MyPlayer(xbmcgui.WindowXML):
         if not data:
             self.parent.showStatus("Ошибка Torrent-TV.AE")
             return
-        jdata = json.loads(data);
+        jdata = json.loads(data)
         print jdata
         if not jdata["success"]:
             self.parent.showStatus("Канал временно не доступен")
@@ -179,16 +179,16 @@ class MyPlayer(xbmcgui.WindowXML):
         print li.getProperty("type")
         print li.getProperty("id")
         if (li.getProperty("type") == "channel"):
-            data = defines.GET("http://1ttvxbmc.top/v3/translation_stream.php?session=%s&channel_id=%s&typeresult=json" % (self.parent.session, li.getProperty("id")));
+            data = defines.GET("http://1ttvxbmc.top/v3/translation_stream.php?session=%s&channel_id=%s&typeresult=json" % (self.parent.session, li.getProperty("id")))
         elif (li.getProperty("type") == "record"):
-            data = defines.GET("http://1ttvxbmc.top/v3/arc_stream.php?session=%s&record_id=%s&typeresult=json" % (self.parent.session, li.getProperty("id")));
+            data = defines.GET("http://1ttvxbmc.top/v3/arc_stream.php?session=%s&record_id=%s&typeresult=json" % (self.parent.session, li.getProperty("id")))
         else:
             self.parent.showStatus("Неизвестный тип контента")
             return
         if not data:
             self.parent.showStatus("Ошибка Torrent-TV.AE")
             return
-        jdata = json.loads(data);
+        jdata = json.loads(data)
         print jdata
         if not jdata["success"]:
             self.parent.showStatus("Канал временно не доступен")
@@ -223,7 +223,7 @@ class MyPlayer(xbmcgui.WindowXML):
         import sys
 
         if sys.platform == 'win32' or sys.platform == 'win64':
-            LogToXBMC("Закрыть TS");
+            LogToXBMC("Закрыть TS")
             subprocess.Popen('taskkill /F /IM ace_engine.exe /T')
             self.TSPlayer = None
 

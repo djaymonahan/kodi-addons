@@ -1,4 +1,7 @@
-﻿2017-04-23 v1.7.2
+﻿2017-05-31 v1.7.3
+  Some fix syntax
+
+2017-04-23 v1.7.2
   Optimize channels load
 
 2017-04-22 v1.7.1

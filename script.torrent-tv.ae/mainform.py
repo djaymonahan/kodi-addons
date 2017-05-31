@@ -98,7 +98,7 @@ class WMainForm(xbmcgui.WindowXML):
         if rzones != lzones:
             print "remote zones != local zones"
             defines.setSettingDef("proxy_zoneid", "TSProxy", "values", rzones)
-            defines.showMessage("Изменился список TSProxy. Проверьте настройки");
+            defines.showMessage("Изменился список TSProxy. Проверьте настройки")
 
     def initLists(self):
         self.category = {}
@@ -373,36 +373,34 @@ class WMainForm(xbmcgui.WindowXML):
             buf.setProperty("type", selItem.getProperty("type"))
             buf.setProperty("id", selItem.getProperty("id"))
             if selItem.getProperty("type") == "archive":
-                self.fillRecords(buf, datetime.datetime.today());
+                self.fillRecords(buf, datetime.datetime.today())
                 return
             print selItem.getProperty("type")
             self.playditem = self.selitem_id
 
             self.player.Start(buf)
-            LogToXBMC("Stoped video");
+            LogToXBMC("Stoped video")
             if xbmc.getCondVisibility("Window.IsVisible(home)"):
                 LogToXBMC("Close from HOME Window")
                 self.close()
             elif xbmc.getCondVisibility("Window.IsVisible(video)"):
-                self.close();
+                self.close()
                 LogToXBMC("Is Video Window")
             elif xbmc.getCondVisibility("Window.IsVisible(programs)"):
-                self.close();
+                self.close()
                 LogToXBMC("Is programs Window")
             elif xbmc.getCondVisibility("Window.IsVisible(addonbrowser)"):
-                self.close();
+                self.close()
                 LogToXBMC("Is addonbrowser Window")
             elif xbmc.getCondVisibility("Window.IsVisible(12346)"):
-                self.close();
+                self.close()
                 LogToXBMC("Is plugin Window")
             else:
                 jrpc = json.loads(xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"GUI.GetProperties","params":{"properties":["currentwindow"]},"id":1}'))
                 if jrpc["result"]["currentwindow"]["id"] == 10025:
-                    LogToXBMC("Is video plugins window");
-                    self.close();
+                    LogToXBMC("Is video plugins window")
+                    self.close()
                 LogToXBMC("Is Other Window")
-
-            LogToXBMC('CUR SELTAB %s' % self.seltab)
 
         elif controlID == WMainForm.BTN_FULLSCREEN:
             if defines.ADDON.getSetting("winmode") == "true":
@@ -442,19 +440,19 @@ class WMainForm(xbmcgui.WindowXML):
                 except:
                     break
                 if ce == None:
-                    brea;
+                    break
                 if i >= curepg.__len__():
                     break
                 sbt = time.localtime(float(curepg[i]['btime']))
                 set = time.localtime(float(curepg[i]['etime']))
                 nextepg = '%.2d:%.2d - %.2d:%.2d %s' % (sbt.tm_hour, sbt.tm_min, set.tm_hour, set.tm_min, curepg[i]['name'])
-                ce.setLabel(nextepg);
+                ce.setLabel(nextepg)
         else:
             controlEpg.setLabel('Нет программы')
             for i in range(1,99):
                 ce = None
                 try:
-                    self.getControl(WMainForm.LBL_FIRST_EPG + i).setLabel('');
+                    self.getControl(WMainForm.LBL_FIRST_EPG + i).setLabel('')
                 except:
                     break
             self.progress.setPercent(1)
@@ -464,7 +462,7 @@ class WMainForm(xbmcgui.WindowXML):
             super(WMainForm, self).onAction(action)
             return
         if action.getButtonCode() == 61513:
-            return;
+            return
         if action in WMainForm.CANCEL_DIALOG:
             LogToXBMC('CLOSE FORM')
             self.isCanceled = True
@@ -501,8 +499,8 @@ class WMainForm(xbmcgui.WindowXML):
             elif res == WMainForm.API_ERROR_NOFAVOURITE:
                 self.showStatus('Канал не найден в избранном')
             elif res == 'TSCLOSE':
-                LogToXBMC("Закрыть TS");
-                self.player.EndTS();
+                LogToXBMC("Закрыть TS")
+                self.player.EndTS()
         elif action.getId() == WMainForm.ACTION_MOUSE:
             if (self.getFocusId() == WMainForm.CONTROL_LIST):
                 self.onFocus(WMainForm.CONTROL_LIST)
@@ -588,7 +586,7 @@ class WMainForm(xbmcgui.WindowXML):
         self.list.reset()
         for ch in self.archive:
             self.list.addItem(ch)
-        LogToXBMC("fillArchive");
+        LogToXBMC("fillArchive")
 
     def fillCategory(self):
         if not self.list:
