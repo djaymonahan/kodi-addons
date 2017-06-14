@@ -28,9 +28,11 @@ if [ $FOR_SYS == "aml" ]; then
               repository.exodus"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
-  ADDON_LIST="script.torrent-tv.rpi \
+  ADDON_LIST="script.module.torrent.ts \
               script.module.xbmcup \
-              plugin.video.zona.mobi"
+              script.torrent-tv.ae \
+              plugin.video.zona.mobi \
+              repository.exodus"
 fi
 
 PY_GEN="generator.py"
