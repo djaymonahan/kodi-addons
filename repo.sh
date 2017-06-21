@@ -26,6 +26,7 @@ if [ $FOR_SYS == "aml" ]; then
               script.torrent-tv.ae \
               plugin.video.zona.mobi \
               repository.dandy.kodi \
+              plugin.video.hdrezka.ae \
               repository.exodus"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
@@ -34,6 +35,7 @@ elif [ $FOR_SYS == "rpi" ]; then
               script.torrent-tv.ae \
               plugin.video.zona.mobi \
               repository.dandy.kodi \
+              plugin.video.hdrezka.ae \
               repository.exodus"
 fi
 
